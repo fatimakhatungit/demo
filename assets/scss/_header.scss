@@ -1,0 +1,31 @@
+.content-header {
+    padding: 14px 40px;
+    background: #171d26; 
+    transition: all 0.4s ease; ;
+    box-shadow: 4px 4px 5px rgb(0 0 0 / 70%);
+
+}
+
+.right-content {
+    position: relative;
+    text-align: right;
+
+    .profile {
+        position: relative; 
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        
+        a {
+            padding: 0 20px;
+            z-index: 9; 
+        }
+
+        img {
+            height: 40px;
+        }
+    }
+
+
+}
+

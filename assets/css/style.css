@@ -1,0 +1,453 @@
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Neuton:wght@200;300;400;700&family=Roboto:wght@100;300;400;500;700&display=swap");
+/*global variable*/
+/*global area*/
+/*----------------------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 16px;
+  color: #e5e7eb;
+  font-family: "Roboto", serif;
+  background-color: #fff;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1170px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  margin: 0;
+}
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+.ul-li ul {
+  margin: 0;
+  padding: 0;
+}
+.ul-li ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+[data-background] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*::placeholder {
+  font-family: var("Roboto", serif);
+  color: rgb(133, 133, 133);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.form-control:focus,
+button:visited,
+button.active,
+button:hover,
+button:focus,
+input:visited,
+input.active,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus,
+a:hover,
+a:focus,
+a:visited,
+a.active,
+select,
+select:hover,
+select:focus,
+select:visited {
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.scroll-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00715D;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  bottom: 50px;
+  right: 50px;
+  box-shadow: 0 24px 36px 0 rgba(54, 4, 185, 0.18);
+  border-radius: 7px;
+  cursor: pointer;
+  z-index: 10;
+}
+.scroll-top i {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 10%, 100%, 20%, 50%, 80% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+.content-header {
+  padding: 14px 40px;
+  background: #171d26;
+  transition: all 0.4s ease;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7);
+}
+
+.right-content {
+  position: relative;
+  text-align: right;
+}
+.right-content .profile {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.right-content .profile a {
+  padding: 0 20px;
+  z-index: 9;
+}
+.right-content .profile img {
+  height: 40px;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  min-width: 240px;
+  height: 100%;
+  z-index: 11;
+  opacity: 1;
+  visibility: visible;
+  background: #171d26;
+  transition: all 0.4s ease;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 0px 20px 0 0;
+}
+
+.side-bar-manu {
+  position: relative;
+}
+.side-bar-manu .nav-item {
+  position: relative;
+  display: block;
+  transition-duration: 0.25s;
+  margin-left: 30px;
+}
+
+.side-bar-logo {
+  margin: 50px 0;
+}
+
+.navigation {
+  position: relative;
+  height: 700px;
+  width: 300px;
+  background-color: rgb(33, 33, 33);
+  overflow-x: hidden;
+  transition: width 0.5s;
+  border-radius: 0 20px 20px 0;
+}
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 90%;
+  border-radius: 50px 0 0 50px;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+.navigation ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 11%;
+  width: 17%;
+  height: 80%;
+  background: rgb(206, 206, 206);
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  z-index: 0;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.navigation ul li.active::before {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  left: 50%;
+}
+.navigation ul li.active {
+  background: rgb(206, 206, 206);
+}
+.navigation ul li.active a::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0px rgb(206, 206, 206);
+}
+.navigation ul li.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 15px -15px 0px rgb(206, 206, 206);
+}
+.navigation ul li.active .title {
+  color: rgb(28, 38, 47);
+}
+.navigation ul li.active .icon {
+  min-width: 40px;
+  background: rgb(112, 112, 112);
+  height: 40px;
+  border-radius: 50%;
+  transform: 0.4s;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 40px;
+  color: #333;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+}
+.navigation ul li a .title {
+  font-family: "Neuton", serif;
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+.main-navbar {
+  position: relative;
+  margin-left: 25px;
+}
+
+.sidemenu {
+  margin-top: 28px;
+}
+.sidemenu ul li {
+  list-style-type: none;
+}
+.sidemenu ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 45px;
+  display: block;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.sidemenu ul li a .title {
+  font-family: "Neuton", serif;
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #fff;
+}
+.sidemenu ul li a .icon {
+  min-width: 45px;
+  position: relative;
+  display: block;
+  line-height: 40px;
+  height: 45px;
+  text-align: center;
+}
+.sidemenu ul li.active a {
+  color: #5161ce;
+  background-color: transparent;
+  transition: all 0.7s;
+}
+.sidemenu ul li.active a .icon {
+  min-width: 45px;
+  background: rgb(112, 112, 112);
+  border-radius: 50%;
+  height: 45px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sidemenu a:not(:only-child):after {
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
+}
+
+.sidemenu .active > a:not(:only-child):after {
+  transform: rotate(90deg);
+}
+
+.selector-active {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 46px;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: rgb(57, 62, 70);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.selector-active .top,
+.selector-active .bottom {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(57, 62, 70);
+  right: 0;
+}
+
+.selector-active .top {
+  top: -25px;
+}
+
+.selector-active .bottom {
+  bottom: -25px;
+}
+
+.selector-active .top:before,
+.selector-active .bottom:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #171d26;
+}
+
+.selector-active .top:before {
+  left: -25px;
+  top: -25px;
+}
+
+.selector-active .bottom:before {
+  bottom: -25px;
+  left: -25px;
+}
+
+main {
+  width: calc(100% - 100px);
+  margin-left: 100px;
+  transition: all 0.4s ease;
+}
+
+.main-content {
+  background-color: rgb(57, 62, 70);
+  padding: 30px 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Page title banner */
+
+/*# sourceMappingURL=style.css.map */
