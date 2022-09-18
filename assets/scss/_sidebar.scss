@@ -10,7 +10,7 @@
     visibility: visible;
     background: #171d26;
     transition: all 0.4s ease;
-    box-shadow: 4px 4px 5px rgb(0 0 0 / 70%);
+    // box-shadow: 4px 4px 5px rgb(0 0 0 / 70%);
     border-radius: 0px 20px 0 0;
 
 
@@ -211,11 +211,14 @@
                     transition: all 0.7s;
                     .icon{
                         min-width: 45px;
-                        background: rgb(112, 112, 112);
+                        background: #9b0000;
                         border-radius: 50%;
-                        height: 45px; 
-                        transition-duration:0.6s;
+                        height: 45px;
+                        -webkit-transition-duration: 0.6s;
+                        transition-duration: 0.6s;
+                        -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
                         transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                        box-shadow: -3px -3px 16px rgb(0 0 0);
                     }
                 }
             }

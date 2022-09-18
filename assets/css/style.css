@@ -246,8 +246,6 @@ select:visited {
   background: #171d26;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  -webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7);
-          box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7);
   border-radius: 0px 20px 0 0;
 }
 
@@ -449,13 +447,15 @@ select:visited {
 }
 .sidemenu ul li.active a .icon {
   min-width: 45px;
-  background: rgb(112, 112, 112);
+  background: #9b0000;
   border-radius: 50%;
   height: 45px;
   -webkit-transition-duration: 0.6s;
-          transition-duration: 0.6s;
+  transition-duration: 0.6s;
   -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-          transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-box-shadow: -3px -3px 16px rgb(0, 0, 0);
+          box-shadow: -3px -3px 16px rgb(0, 0, 0);
 }
 
 .sidemenu a:not(:only-child):after {
@@ -539,46 +539,52 @@ main {
 }
 
 .main-content {
-  background-color: rgb(57, 62, 70);
+  background-color: #393e46;
   padding: 30px 0;
   position: relative;
   width: 100%;
   height: 100vh;
 }
-
-.accordion .accordion-item {
-  border: none;
-  margin-bottom: 30px;
+.main-content .accordion .accordion-item {
+  margin-bottom: 20px;
 }
-.accordion .accordion-item .accordion-header {
-  background: rgb(155, 0, 0);
-  border-radius: 30px;
-  margin-bottom: 0;
+.main-content .accordion .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-width: 1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.main-content .accordion .accordion-button {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-right: 20px;
-}
-.accordion .accordion-item .accordion-button {
-  position: relative;
-  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 10px 20px;
+  padding: 1rem 1.25rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 0;
+  color: #212529;
+  background-color: rgb(155, 0, 0);
+  border: 1px solid rgb(155, 0, 0);
+  border-radius: 25px;
   overflow-anchor: none;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed.collapse {
+  border-bottom-width: 1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.accordion-collapse {
+  border: 1px solid rgb(155, 0, 0);
+  border-width: 0 1px;
 }
 
 .accordion-button:focus {
@@ -587,6 +593,12 @@ main {
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: rgb(155, 0, 0);
+  border-radius: 20px 20px 0 0;
 }
 
 /* Page title banner */

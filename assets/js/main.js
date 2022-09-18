@@ -1,4 +1,3 @@
-
 /* -----------------------------------------------------------------------------
 File:           JS Core
 Version:        1.0
@@ -47,50 +46,50 @@ Last change:    00/00/00
 		},
 
 		sideBar: function () {
-			
-var tabsVerticalInner = $('#accordian');
-var selectorVerticalInner = $('#accordian').find('li').length;
-var activeItemVerticalInner = tabsVerticalInner.find('.active');
-var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
-var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
-var itemPosVerticalTop = activeItemVerticalInner.position();
-var itemPosVerticalLeft = activeItemVerticalInner.position();
-$(".selector-active").css({
-	"top":itemPosVerticalTop.top + "px", 
-	"left":itemPosVerticalLeft.left + "px",
-	// "height": activeWidthVerticalHeight + "px"
-	// "width": activeWidthVerticalWidth + "px"
-});
-$("#accordian").on("click","li",function(e){
-	$('#accordian ul li').removeClass("active");
-	$(this).addClass('active');
-	var activeWidthVerticalHeight = $(this).innerHeight();
-	var activeWidthVerticalWidth = $(this).innerWidth(); 
-	var itemPosVerticalTop = $(this).position();
-	var itemPosVerticalLeft = $(this).position();
-	$(".selector-active").css({
-		"top":itemPosVerticalTop.top + "px", 
-		"left":itemPosVerticalLeft.left + "px",
-		// "height": activeWidthVerticalHeight + "px"
-		// "width": activeWidthVerticalWidth + "px"
-	});
-});
+
+			var tabsVerticalInner = $('#accordian');
+			var selectorVerticalInner = $('#accordian').find('li').length;
+			var activeItemVerticalInner = tabsVerticalInner.find('.active');
+			var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
+			var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
+			var itemPosVerticalTop = activeItemVerticalInner.position();
+			var itemPosVerticalLeft = activeItemVerticalInner.position();
+			$(".selector-active").css({
+				"top": itemPosVerticalTop.top + "px",
+				"left": itemPosVerticalLeft.left + "px",
+				// "height": activeWidthVerticalHeight + "px"
+				// "width": activeWidthVerticalWidth + "px"
+			});
+			$("#accordian").on("click", "li", function (e) {
+				$('#accordian ul li').removeClass("active");
+				$(this).addClass('active');
+				var activeWidthVerticalHeight = $(this).innerHeight();
+				var activeWidthVerticalWidth = $(this).innerWidth();
+				var itemPosVerticalTop = $(this).position();
+				var itemPosVerticalLeft = $(this).position();
+				$(".selector-active").css({
+					"top": itemPosVerticalTop.top + "px",
+					"left": itemPosVerticalLeft.left + "px",
+					// "height": activeWidthVerticalHeight + "px"
+					// "width": activeWidthVerticalWidth + "px"
+				});
+			});
 
 
-// --------------add active class-on another-page move----------
-jQuery(document).ready(function($){
-  // Get current path and find target link
-  var path = window.location.pathname.split("/").pop();
+			// --------------add active class-on another-page move----------
+			jQuery(document).ready(function ($) {
+				// Get current path and find target link
+				var path = window.location.pathname.split("/").pop();
 
-  // Account for home page with empty path
-  if ( path == '' ) {
-    path = 'index.html';
-  }
+				// Account for home page with empty path
+				if (path == '') {
+					path = 'index.html';
+				}
 
-  var target = $('#accordian ul li a[href="'+path+'"]');
-  // Add active class to target link
-  target.parent().addClass('active');
-});
+				var target = $('#accordian ul li a[href="' + path + '"]');
+				// Add active class to target link
+				target.parent().addClass('active');
+			});
 		},
 
 		lineChart: function () {
@@ -104,8 +103,7 @@ jQuery(document).ready(function($){
 				data: {
 					labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
 
-					datasets: [
-						{
+					datasets: [{
 							label: "Referral",
 							backgroundColor: '#d93535',
 							borderColor: 'rgba(76, 132, 255,0)',
@@ -181,8 +179,7 @@ jQuery(document).ready(function($){
 							},
 						}]
 					},
-					tooltips: {
-					}
+					tooltips: {}
 				}
 			})
 		},
@@ -196,15 +193,14 @@ jQuery(document).ready(function($){
 				// The data for our dataset
 				data: {
 					labels: ["2016", "2017", "2018", "2019", "2020"],
-					datasets: [
-						{
+					datasets: [{
 							label: "Direct",
 							backgroundColor: '#0a82d5',
 							borderColor: 'rgba(254, 196, 0,0)',
 							data: [20, 20, 25, 30, 25, 30, 30],
 							lineTension: 0.3,
 							pointBackgroundColor: 'rgba(254, 196, 0,0)',
-							pointHoverBackgroundColor: '#0a82d5', 
+							pointHoverBackgroundColor: '#0a82d5',
 							pointHoverRadius: 3,
 							pointHitRadius: 30,
 							pointBorderWidth: 2,
@@ -223,12 +219,12 @@ jQuery(document).ready(function($){
 							pointBorderWidth: 2,
 							pointStyle: 'rectRounded'
 						},
-						
+
 						{
 							label: "Social",
 							backgroundColor: '#3dbb61',
 							borderColor: 'rgba(41, 204, 151,0)',
-							data: [40, 40, 45, 45, 40, 45, 50], 
+							data: [40, 40, 45, 45, 40, 45, 50],
 							lineTension: 0.3,
 							pointBackgroundColor: 'rgba(41, 204, 151,0)',
 							pointHoverBackgroundColor: '#3dbb61',
@@ -236,15 +232,15 @@ jQuery(document).ready(function($){
 							pointHitRadius: 30,
 							pointBorderWidth: 2,
 							pointStyle: 'rectRounded'
-						}, 
+						},
 						{
 							label: "Referral",
-							backgroundColor:  '#d93535',
+							backgroundColor: '#d93535',
 							borderColor: 'rgba(76, 132, 255,0)',
 							data: [45, 45, 50, 50, 50, 50, 140],
 							lineTension: 0.3,
 							pointBackgroundColor: 'rgba(76, 132, 255,0)',
-							pointHoverBackgroundColor:  '#d93535',
+							pointHoverBackgroundColor: '#d93535',
 							pointHoverRadius: 3,
 							pointHitRadius: 30,
 							pointBorderWidth: 2,
@@ -274,8 +270,7 @@ jQuery(document).ready(function($){
 							},
 						}]
 					},
-					tooltips: {
-					}
+					tooltips: {}
 				}
 			})
 		},
@@ -347,13 +342,13 @@ jQuery(document).ready(function($){
 			});
 		},
 
-		Animation: function() {
+		Animation: function () {
 			var wow = new WOW({
-				boxClass: 'wow', 
-				animateClass: 'animated', 
-				offset: 0, 
-				mobile: true, 
-				live: true, 
+				boxClass: 'wow',
+				animateClass: 'animated',
+				offset: 0,
+				mobile: true,
+				live: true,
 			});
 			wow.init();
 		},
@@ -364,7 +359,3 @@ jQuery(document).ready(function($){
 
 
 })(window, document, jQuery)
-
-
-
-
