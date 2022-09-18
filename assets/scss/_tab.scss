@@ -11,3 +11,41 @@ main {
     height: 100vh; 
 
 }
+.accordion{
+    .accordion-item{
+        border: none;
+        margin-bottom: 30px; 
+        .accordion-header {
+            background: rgb(155, 0, 0); 
+            border-radius: 30px;
+            margin-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 20px;
+        }
+        .accordion-button {
+            position: relative;
+            display: block;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0;
+            overflow-anchor: none;
+          
+        }
+       
+    }
+}
+
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
