@@ -12,32 +12,55 @@ main {
     height: 100vh;
 
 }
+
 .accordion-item {
     margin-bottom: 20px;
+    position: relative;
+
     .accordion-button {
         position: relative;
-        display: block; 
-        color:#fff; 
+        display: block;
+        color: #fff;
+        padding:13px 10px; 
+        &.collapsed {
+            border-bottom-width: 0;
+            background: #9b0000;
+            border: 1px solid #9b0000;
+            border-radius: 25px !important;
+            &::after { 
+                flex-shrink: 0;
+                margin-left: auto;
+                position: absolute;
+                content: "";
+                transition: transform .2s ease-in-out;
+                border-left: solid 10px transparent;
+                border-right: solid 10px transparent;
+                border-top: solid 10px #fff;
+                height: 0;
+                width: 0;
+                margin-left: 45%;
+            }
+        }
+
+       
     }
 }
+
 .accordion-button:not(.collapsed) {
     color: #fff;
-    background-color: #9b0000; 
+    background-color: #9b0000;
     border-radius: 20px 20px 0px 0px !important;
 }
+
 .accordion-button:focus {
     z-index: 3;
     border-color: transparent;
     outline: 0;
-    box-shadow:none;
+    box-shadow: none;
 }
-.accordion-button.collapsed {
-    border-bottom-width: 0;
-    background:  #9b0000; 
-    border: 1px solid #9b0000; 
-    border-radius: 25px !important; 
-}
+
+
 .accordion-collapse {
-    border: solid  #9b0000; 
+    border: solid #9b0000;
     border-width: 0 1px 1px;
 }

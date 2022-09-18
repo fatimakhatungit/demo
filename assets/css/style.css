@@ -548,11 +548,36 @@ main {
 
 .accordion-item {
   margin-bottom: 20px;
+  position: relative;
 }
 .accordion-item .accordion-button {
   position: relative;
   display: block;
   color: #fff;
+  padding: 13px 10px;
+}
+.accordion-item .accordion-button.collapsed {
+  border-bottom-width: 0;
+  background: #9b0000;
+  border: 1px solid #9b0000;
+  border-radius: 25px !important;
+}
+.accordion-item .accordion-button.collapsed::after {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: auto;
+  position: absolute;
+  content: "";
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px #fff;
+  height: 0;
+  width: 0;
+  margin-left: 45%;
 }
 
 .accordion-button:not(.collapsed) {
@@ -567,13 +592,6 @@ main {
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.accordion-button.collapsed {
-  border-bottom-width: 0;
-  background: #9b0000;
-  border: 1px solid #9b0000;
-  border-radius: 25px !important;
 }
 
 .accordion-collapse {
