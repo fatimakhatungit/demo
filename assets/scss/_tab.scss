@@ -11,97 +11,33 @@ main {
     width: 100%;
     height: 100vh;
 
-    .accordion {
-        .accordion-item {
-            margin-bottom: 20px; 
-            .accordion-header {
-              
-            }
-
-            &:last-of-type {
-                .accordion-button {
-                    &.collapsed {
-                        border-bottom-width: 1px;
-                        border-bottom-right-radius: 0;
-                        border-bottom-left-radius: 0;
-                    }
-                }
-            }
-        }
-
-        .accordion-button {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 1rem 1.25rem;
-            font-size: 1rem;
-            color: #212529;
-            background-color: rgb(155, 0, 0);
-            border: 1px solid rgb(155, 0, 0);
-            border-radius: 25px;
-            overflow-anchor: none;
-
-        }
+}
+.accordion-item {
+    margin-bottom: 20px;
+    .accordion-button {
+        position: relative;
+        display: block; 
+        color:#fff; 
     }
 }
-
-// .accordion{
-//     .accordion-item{
-//             border: none;
-//             margin-bottom: 20px;
-//         .accordion-header {
-//             background: rgb(155, 0, 0); 
-//             margin-bottom: 0;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             padding-right: 20px;   
-//              border-radius: 20px 20px 0 0;
-//         }
-//         .accordion-button {
-//             position: relative;
-//             display: block;
-//             align-items: center;
-//             width: 100%;
-//             padding: 10px 20px;
-//             font-size: 1rem;
-//             color: #fff;
-//             background-color: transparent;
-//             border: 1px solid transparent;
-//             border-radius: 0;
-//             overflow-anchor: none;
-
-//         }
-
-//     }
-// }
-
-.accordion-item:last-of-type .accordion-button.collapsed.collapse {
-    border-bottom-width: 1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #9b0000; 
+    border-radius: 20px 20px 0px 0px !important;
 }
-
-.accordion-item:first-of-type .accordion-button {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-}
-
-.accordion-collapse {
-    border: 1px solid rgb(155, 0, 0);
-    border-width: 0 1px;
-}
-
 .accordion-button:focus {
     z-index: 3;
     border-color: transparent;
     outline: 0;
-    box-shadow: none;
+    box-shadow:none;
 }
-
-.accordion-button:not(.collapsed) {
-    color: #fff;
-    background-color: rgb(155, 0, 0);
-    border-radius: 20px 20px 0 0;
+.accordion-button.collapsed {
+    border-bottom-width: 0;
+    background:  #9b0000; 
+    border: 1px solid #9b0000; 
+    border-radius: 25px !important; 
+}
+.accordion-collapse {
+    border: solid  #9b0000; 
+    border-width: 0 1px 1px;
 }
