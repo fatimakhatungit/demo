@@ -12,7 +12,17 @@ main {
     height: 100vh;
 
 }
-
+.content-title {
+    padding: 10px;
+    background: #ffd9bf;
+    color: #434343;
+    text-transform: capitalize;
+    text-decoration: underline;
+  
+    h3{
+        font-size: 18px;
+    }
+}
 .accordion-item {
     margin-bottom: 20px;
     position: relative;
@@ -31,6 +41,7 @@ main {
                 flex-shrink: 0;
                 margin-left: auto;
                 position: absolute;
+                top:18px;
                 content: "";
                 transition: transform .2s ease-in-out;
                 border-left: solid 10px transparent;
@@ -62,5 +73,30 @@ main {
 
 .accordion-collapse {
     border: solid #9b0000;
-    border-width: 0 1px 1px;
+    border-width: 0 1px 1px;  
+    border-radius: 0 0 25px 25px;
+}
+.accordion-body {
+    padding: 0;
+    background: #fff; 
+    border-radius: 0 0 25px 25px;
+    padding-bottom: 100px;
+}
+.content{
+    padding: 0 20px;
+    h2 {
+        font-size: 45px;
+        text-align: center;
+        margin: 30px 0;
+    }
+    p {
+        color:#434343;
+
+    }
+}
+.accordion-item:last-of-type .accordion-collapse {
+    border-bottom-width: 1px;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-radius: 0 0 25px 25px;
 }

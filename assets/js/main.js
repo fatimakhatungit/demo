@@ -35,7 +35,17 @@ Last change:    00/00/00
 			dsbJs.lineChart();
 			dsbJs.lineChart2();
 			dsbJs.Animation();
+			dsbJs.moveUpDown(); 
 
+		},
+		moveUpDown: function () {
+				$("#flip").click(function(){
+					$("#panel").slideToggle("slow");
+					$(this).text(function(i, v){
+					  return v === 'read more' ? 'read less' : 'read more'
+				  })
+				});
+			
 		},
 		searchBar: function () {
 			$(".searchbtn").click(function () {
